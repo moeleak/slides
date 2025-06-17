@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./static/css/base.css" rel="stylesheet">
+    <link href="./static/css/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.font.im/css?family=Source+Serif+Pro%7CLato%7CInconsolata" rel="stylesheet"
+        type="text/css">
+    <title> intro </title>
+    <!-- browser favicon -->
+    <link rel="shortcut icon" href="./static/img/favicon.png">
+    <style>
+        .font-sans {
+            font-family: 'Lato', 'SimHei', 'STHeiti', 'SimHei', 'Serif';
+        }
+
+        .font-serif {
+            font-family: 'Source Serif Pro', 'Songti SC', 'SimSun', 'Serif', serif;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://jyywiki.cn/static/katex/katex.min.css">
+    <script defer src="https://jyywiki.cn/static/katex/katex.min.js"></script> -->
+    <link rel="stylesheet" href="./static/katex/katex.min.css">
+    <script defer src="./static/katex/katex.min.js"></script>
+    <!-- <script defer src="https://jyywiki.cn/static/katex/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script> -->
+    <script defer src="./static/katex/auto-render.min.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // &#8226; auto-render specific keys, e.g.:
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                // &#8226; rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="./static/reveal/reveal.css">
+    <link rel="stylesheet" href="./static/reveal/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="./static/jyy/jyy.css">
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <div class="reveal">
+        <div class="slides">
+            <section><section><div class="center middle"><div style="width:100%"><div><h1 id="embedded-systems-course-demonstration" class="text-2xl mt-2 font-sans">Embedded Systems Course Demonstration</h1><p class="font-serif my-1">
+    <include src="Slides_Author">
+        <div class="py-16">
+            <p class="font-serif my-1">
+                <a href="" class=" text-amber-900">
+                    李幸值
+                </a>
+            </p>
+        </div>
+        <div class="row">
+            <p class="font-serif my-1"/>
+            
+            <div class="author-affiliation">
+                <a href="" class=" text-amber-900">
+                    <p class="font-serif my-1">
+                        　　比勒费尔德应用科学大学　　
+                    </p>
+                    <img class="inline-img h-24" src="./static/img/6e1728cfdee3439e84abf75cdb22e6aa.png" style="display: inline-block;"/>
+                </a>
+            </div>
+            
+        </div>
+    </include>
+</p></div></div></div></section><section><div><h2 id="overview" class="text-xl mt-2 pb-2 font-sans">Overview</h2>
+<p class="font-serif my-1">The main points this slide answers</p>
+<ul class="list-disc font-serif">
+<li class="ml-8"><strong>Q1</strong> (Why) Why EVC is advanced?</li>
+<li class="ml-8"><strong>Q2</strong> (What) What is EVC?</li>
+<li class="ml-8"><strong>Q3</strong> (How) How to use EVC?</li>
+</ul>
+<hr/>
+
+<p class="font-serif my-1">The main points this slide focuses on</p>
+<ul class="list-disc font-serif">
+<li class="ml-8">What functions does EVC have?</li>
+<li class="ml-8">Basic use-case demonstration of EVC</li>
+</ul></div></section></section><section><section><div><h2 id="features" class="text-xl mt-2 pb-2 font-sans">Features</h2>
+<ul class="list-disc font-serif">
+<li class="ml-8">Configure for models switching (eg, switch man to woman)</li>
+<li class="ml-8">Realtime conversing.</li>
+<li class="ml-8">Easy to train your models by using low-end GPU.</li>
+</ul></div></section></section><section><section><div><h2 id="code-structure" class="text-xl mt-2 pb-2 font-sans">Code structure</h2>
+<ul class="list-disc font-serif">
+<li class="ml-8">C/S Design Pattern</li>
+<li class="ml-8">which means it's easy to depoly</li>
+<li class="ml-8">
+<p class="font-serif my-1"><del>also means I can earn money from customers.</del></p>
+</li>
+<li class="ml-8">
+<p class="font-serif my-1">API calling</p>
+</li>
+</ul>
+<div class="codehilite"><pre class="bg-gray-100 overflow-x-auto rounded p-2 mb-2 mt-2"><span/><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"http://localhost:5050/convert"</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"input.wav"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">audio_file</span><span class="p">:</span>
+    <span class="n">audio_data</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">audio_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"audio_data"</span><span class="p">:</span> <span class="n">audio_data</span><span class="p">})</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"output.wav"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">output_file</span><span class="p">:</span>
+    <span class="n">output_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div></div></section><section><div><h2 id="hardwares" class="text-xl mt-2 pb-2 font-sans">Hardwares</h2>
+<p class="font-serif my-1"><img class="float-right" src="./static/img/e57fb1933dfb468ba33bb7de41ce9021.jpg" width="500px"/></p>
+<ul class="list-disc font-serif">
+<li class="ml-8">ESP32-S3 MCU</li>
+<li class="ml-8">I2S Microphone</li>
+<li class="ml-8">I2S Speaker/Amp</li>
+<li class="ml-8">128×64 OLED Display <red>thanks for Professor Qiang Li</red></li>
+<li class="ml-8">LED – Visual feedback during recording (ON = inactive, OFF = recording)</li>
+</ul></div></section><section><div><h3 id="tech-stacks">Tech stacks</h3>
+<ul class="list-disc font-serif">
+<li class="ml-8">Arduino ESP32 for the client<ul class="list-disc font-serif">
+<li class="ml-8">Why?</li>
+</ul>
+</li>
+<li class="ml-8">Python for the server</li>
+</ul>
+<hr/>
+
+<p class="font-serif my-1">Start the server</p>
+<div class="codehilite"><pre class="bg-gray-100 overflow-x-auto rounded p-2 mb-2 mt-2"><span/><code>$<span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>rvc_python<span class="w"> </span>api<span class="w"> </span>-p<span class="w"> </span><span class="m">5050</span><span class="w"> </span>-l<span class="w"> </span>-mp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>./assests/weights/sakuna.pth<span class="w"> </span>-de<span class="w"> </span>cuda:0
+</code></pre></div></div></section></section><section><section><div><h2 id="demo" class="text-xl mt-2 pb-2 font-sans">Demo</h2>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&amp;aid=114697605025952&amp;bvid=BV187NizLE7N&amp;cid=30543578263&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"/></div></section></section>
+        </div>
+    </div>
+
+    <script src="./static/reveal/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+
+            width: 1024, height: 768,
+
+            slideNumber: 'c/t',
+            controlsTutorial: false,
+            progress: false,
+            hash: true,
+            center: false,
+            autoAnimateUnmatched: true,
+            autoAnimateEasing: 'ease-out',
+            autoAnimateDuration: 0.3,
+            transitionSpeed: 'fast'
+        });
+    </script>
+</body>
+
+</html>
